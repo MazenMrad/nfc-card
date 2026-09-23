@@ -1,0 +1,21 @@
+#!/usr/bin/env python
+
+import os
+
+local_env = Environment(tools=["default"], PLATFORM="")
+local_env["build_profile"] = "build_profile.json"
+env = SConscript("godot-cpp/SConstruct", {"env": local_env, "api_version": "4.6"})
+
+env.Append(CPPPATH=["src"])
+env.Append(LIBS=["winscard"])
+
+sources = Glob("src/*.cpp")
+suffix = env["suffix"].replace(".dev", "").replace(".universal", "")
+library_name = "{}nfc_windows{}{}".format(env.subst("$SHLIBPREFIX"), suffix, env.subst("$SHLIBSUFFIX"))
+
+library = env.SharedLibrary(
+    "../addons/nfc_windows/bin/{}".format(library_name),
+    source=sources,
+)
+
+Default(library)

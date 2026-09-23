@@ -1,0 +1,35 @@
+{
+  "built_at": "2026-09-09",
+  "target": {
+    "os": "windows",
+    "architecture": "x86_64",
+    "godot_api": "4.6",
+    "precision": "single"
+  },
+  "toolchain": {
+    "compiler": "LLVM-MinGW 22.1.8 (x86_64 UCRT)",
+    "python": "3.12.6",
+    "scons": "4.11.1",
+    "godot_smoke_runtime": "4.6.3.stable.official.7d41c59c4",
+    "godot_cpp_commit": "6cceaf6a5f8b0d78ac5d71c139fd7fabba43b918"
+  },
+  "binaries": [
+    {
+      "path": "addons/nfc_windows/bin/nfc_windows.windows.template_debug.x86_64.dll",
+      "bytes": 1147904,
+      "sha256": "9EA1517403855A52416C0A9ED22173F8D53FCBC85C6464C12D64D4C4274BE0B8"
+    },
+    {
+      "path": "addons/nfc_windows/bin/nfc_windows.windows.template_release.x86_64.dll",
+      "bytes": 1129472,
+      "sha256": "0E866E35656C2C0EBF49B8DFAB82638D0C5B5EE6080B5F9A87D7F86A01CBCE03"
+    }
+  ],
+  "dynamic_dependencies": [
+    "WinSCard.dll",
+    "KERNEL32.dll",
+    "Windows Universal C Runtime API sets"
+  ],
+  "signed": false,
+  "hardware_validation": "pending"
+}

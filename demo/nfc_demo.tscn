@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://dpdetfkpf22e0"]
+
+[ext_resource type="Script" uid="uid://civasywvvqaes" path="res://demo/nfc_demo.gd" id="1_script"]
+
+[node name="NfcDemo" type="Control" unique_id=748636449]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="." unique_id=244559739]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.035, 0.047, 0.075, 1)
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=1996493903]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 24.0
+offset_right = -32.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Layout" type="VBoxContainer" parent="Margin" unique_id=2000461347]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="Margin/Layout" unique_id=1218728667]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.91, 1, 1)
+theme_override_font_sizes/font_size = 28
+text = "NTAG215 · Godot PC/SC Demo"
+
+[node name="Help" type="Label" parent="Margin/Layout" unique_id=93625404]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.58, 0.67, 0.8, 1)
+text = "Dedicated game cards only. Raw writes begin at page 4 and overwrite NDEF data."
+autowrap_mode = 2
+
+[node name="ReaderRow" type="HBoxContainer" parent="Margin/Layout" unique_id=833470717]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Readers" type="OptionButton" parent="Margin/Layout/ReaderRow" unique_id=520829169]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Refresh" type="Button" parent="Margin/Layout/ReaderRow" unique_id=370745492]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Refresh Readers"
+
+[node name="Open" type="Button" parent="Margin/Layout/ReaderRow" unique_id=1699697342]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Open Card"
+
+[node name="Close" type="Button" parent="Margin/Layout/ReaderRow" unique_id=650950203]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Close"
+
+[node name="Uid" type="Label" parent="Margin/Layout" unique_id=2042114470]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.72, 0.82, 0.95, 1)
+text = "UID: —"
+
+[node name="PayloadLabel" type="Label" parent="Margin/Layout" unique_id=302503426]
+layout_mode = 2
+text = "Payload (UTF-8)"
+
+[node name="Payload" type="TextEdit" parent="Margin/Layout" unique_id=1853027520]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 105)
+layout_mode = 2
+placeholder_text = "Example: weapon=laser;move_up=W"
+wrap_mode = 1
+
+[node name="ByteCount" type="Label" parent="Margin/Layout" unique_id=1861351619]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0 / 100 bytes"
+horizontal_alignment = 2
+
+[node name="ActionRow" type="HBoxContainer" parent="Margin/Layout" unique_id=1532280441]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Write" type="Button" parent="Margin/Layout/ActionRow" unique_id=36807536]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Write + Verify"
+
+[node name="ReadLabel" type="Label" parent="Margin/Layout/ActionRow" unique_id=1314566980]
+layout_mode = 2
+text = "Read length"
+
+[node name="ReadLength" type="SpinBox" parent="Margin/Layout/ActionRow" unique_id=1685324044]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+min_value = 1.0
+value = 16.0
+
+[node name="Read" type="Button" parent="Margin/Layout/ActionRow" unique_id=1602365174]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Read Bytes"
+
+[node name="OutputLabel" type="Label" parent="Margin/Layout" unique_id=466046039]
+layout_mode = 2
+text = "Read result"
+
+[node name="Output" type="TextEdit" parent="Margin/Layout" unique_id=348136764]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+editable = false
+wrap_mode = 1
+
+[node name="Status" type="Label" parent="Margin/Layout" unique_id=23058908]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.58, 0.67, 0.8, 1)
+text = "Ready."
+autowrap_mode = 2

@@ -1,0 +1,11 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# SCons cache and build outputs
+native/.sconsign.dblite
+native/**/*.o
+native/tests/*.exe
+
+# Clone this with the steps in native/BUILD.md
+/native/godot-cpp/
